@@ -1,0 +1,31 @@
+form {
+    background-color:#0d8187;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border: 1rem ridge black;
+    width: 70%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 3rem;
+    .gender {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+    label {
+        font-size: 2.5rem;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        select {
+            font-size: 1rem;
+            background-color: #303030;
+            color: #FFF;
+        }
+    }
+}

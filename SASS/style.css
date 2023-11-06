@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "Bellota";
+  src: url(../Fonts/Bellota-Regular.otf);
+}
+body {
+  font-family: "Bellota";
+  background-color: #0d8187;
+}
+body header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+body header h1 {
+  color: #FFF;
+  font-size: 5rem;
+}
+body main {
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  border: 5px ridge black;
+  background-color: #303030;
+  width: 95%;
+  height: 6vh;
+  font-size: 2rem;
+  color: #FFF;
+}
+
+.submit {
+  background-color: #FFF;
+  color: #FFF;
+  border: none;
+  font-size: 2rem;
+  width: 25vw;
+  height: 15vh;
+  background-color: #303030;
+}
+
+textarea {
+  border: 5px ridge black;
+  color: #FFF;
+  background-color: #303030;
+  width: 50vw;
+  height: 20vh;
+  font-size: 2rem;
+}
+
+form {
+  background-color: #0d8187;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  border: 1rem ridge black;
+  width: 70%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 3rem;
+}
+form .gender {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+form label {
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+form label select {
+  font-size: 1rem;
+  background-color: #303030;
+  color: #FFF;
+}
+
+* {
+  margin: 0;
+}/*# sourceMappingURL=style.css.map */
