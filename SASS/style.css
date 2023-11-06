@@ -78,7 +78,8 @@ form label {
   align-items: center;
 }
 form label select {
-  font-size: 1rem;
+  font-size: 2rem;
+  width: 95%;
   background-color: #303030;
   color: #FFF;
 }
