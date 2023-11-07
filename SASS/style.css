@@ -23,6 +23,9 @@ body main {
   justify-content: center;
   align-items: center;
 }
+body main p {
+  font-size: 2rem;
+}
 
 input {
   border: 5px ridge black;

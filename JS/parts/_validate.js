@@ -6,10 +6,19 @@ export const validateName = () => {
             fname.style.border = '5px ridge red';
             if (event.key === 'Enter') {
                 event.preventDefault();
+                const div = document.querySelector('.nameDiv');
+                const p = document.createElement('p')
+                p.textContent = 'Two characters minimum required';
+                div.appendChild(p);
                 return false;
-            }
+            } 
         } else {
-            fname.style.border = '5px ridge green';           
+            let divlength = document.querySelector('.nameDiv')
+                for (let i = 1; divlength.childElementCount > 1; i++) {
+                    divlength.removeChild(divlength.children[i]);
+                    i = 0;
+            }
+            fname.style.border = '5px ridge green';       
         }
     })
 }
@@ -21,12 +30,19 @@ export const validatelastName = () => {
             lname.style.border = '5px ridge red';
             if (event.key === 'Enter') {
                 event.preventDefault();
+                const div = document.querySelector('.lnameDiv');
+                const p = document.createElement('p')
+                p.textContent = 'Two characters minimum required';
+                div.appendChild(p);
                 return false;
               }
-            
-            
         } else {
-            lname.style.border = '5px ridge green';           
+            lname.style.border = '5px ridge green'; 
+            let divlength = document.querySelector('.lnameDiv')
+            for (let i = 1; divlength.childElementCount > 1; i++) {
+                divlength.removeChild(divlength.children[i]);
+                i = 0;
+        }          
         }
     })
 }
@@ -42,14 +58,21 @@ export const validateEmail = () => {
         let emailValue = document.querySelector('.email').value;
         if (emailValue.includes('@gmail.com')) {
             email.style.border = '5px ridge green';
+            let divlength = document.querySelector('.emailDiv')
+            for (let i = 1; divlength.childElementCount > 1; i++) {
+                divlength.removeChild(divlength.children[i]);
+                i = 0;
+            }
         } else {
             email.style.border = '5px ridge red';
             if (event.key === 'Enter') {
                 event.preventDefault();
+                let div = document.querySelector('.emailDiv');
+                let p = document.createElement('p')
+                p.textContent = '@gmail.com required';
+                div.appendChild(p);
                 return false;
-              }
-            
-                       
+            }           
         }
     })
 }
@@ -61,12 +84,21 @@ export const validateCountry = () => {
             country.style.border = '5px ridge red';
             if (event.key === 'Enter') {
                 event.preventDefault();
+                let div = document.querySelector('.countryDiv');
+                let p = document.createElement('p')
+                p.textContent = 'Four characters minimum required';
+                div.appendChild(p);
                 return false;
               }
             
             
         } else {
-            country.style.border = '5px ridge green';           
+            country.style.border = '5px ridge green'; 
+            let divlength = document.querySelector('.countryDiv')
+            for (let i = 1; divlength.childElementCount > 1; i++) {
+                divlength.removeChild(divlength.children[i]);
+                i = 0;
+        }          
         }
     })
 }
@@ -84,6 +116,10 @@ export const validateMessage = () => {
             message.style.border = '5px ridge red';
             if (event.key === 'Enter') {
                 event.preventDefault();
+                let div = document.querySelector('.countryDiv');
+                let p = document.createElement('p')
+                p.textContent = 'Ten characters minimum required';
+                div.appendChild(p);
                 return false;
               }
             

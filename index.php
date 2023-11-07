@@ -25,10 +25,22 @@
             }  
             returnInfos();
         ?>
+        <?php
+            if (!empty($honeypot)) {
+                echo "Hey don't spam me";
+                return;
+              } else {
+                mail($to, $subject, $message, $header);
+              }
+        ?>
         <main>
+        <script type="text/javascript">
+            function noenter() {
+            return !(window.event && window.event.keyCode == 13); }
+        </script>
             <form method = "POST">
-                <div class="nameDiv"><label for="name">First Name: <input type="text" name="name" class="name" required></label></div>
-                <div class="lnameDiv"><label for="lastname">Last Name: <input type="text" name="lastname" class="lname" required></label></div>
+                <div class="nameDiv"><label for="name">First Name: <input type="text" name="name" class="name" onkeypress="return noenter()"></label></div>
+                <div class="lnameDiv"><label for="lastname">Last Name: <input type="text" name="lastname" class="lname" onkeypress="return noenter()"></label></div>
                 <div class="genderDiv">
                     <label for="genders" class="genderLabel">Gender:
                         <select name="genders" class="gender">
@@ -37,8 +49,8 @@
                         </select>
                     </label>
                 </div>
-                <div class="emailDiv"><label for="email">Email(...@gmail.com): <input type="email" name="email" class="email" required></label></div>
-                <div class="countryDiv"><label for="country">Country: <input type="text" name="country" class="country" required></label></div>
+                <div class="emailDiv"><label for="email">Email: <input type="email" name="email" class="email" onkeypress="return noenter()"></label></div>
+                <div class="countryDiv"><label for="country">Country: <input type="text" name="country" class="country" onkeypress="return noenter()"></label></div>
                 <div class="subjectDiv">
                     <label for="subject" class="subjectLabel">Subject: 
                         <select name="subject" class="choices">
@@ -49,7 +61,7 @@
                     </label>
                 </div>
                 <div class="messageDiv">
-                    <label for="message">Message: <textarea name="message" class="message" required></textarea></label>
+                    <label for="message">Message: <textarea name="message" class="message" ></textarea></label>
                 </div>
                 <input type="submit" name="submit" value="Submit" class="submit">
             </form>
