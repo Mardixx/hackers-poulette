@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="./SASS/style.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="./favicon/hackers-poulette-logo.png">
     <script defer type="module" src="./JS/script.js"></script>
 </head>
     <body>
@@ -22,16 +23,9 @@
                 $subject = htmlspecialchars($_POST["subject"]);
                 
                 require './assets/mail.php';
+                
             }  
             returnInfos();
-        ?>
-        <?php
-            if (!empty($honeypot)) {
-                echo "Hey don't spam me";
-                return;
-              } else {
-                mail($to, $subject, $message, $header);
-              }
         ?>
         <main>
         <script type="text/javascript">
