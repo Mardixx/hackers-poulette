@@ -13,39 +13,44 @@
         </header>
         <?php
             function returnInfos() {
-                $message = $_GET["message"];
-                $name = $_GET["name"];
-                $lastname = $_GET["lastname"];
-                $male = $_GET["male"];
-                $woman = $_GET["woman"];
-                $email = $_GET["email"];
-                $country = $_GET["country"];
-                $subject = $_GET["subject"];
-
-                echo '<pre>';
-                print_r($_GET);
-                echo '<pre>';
+                $message = htmlspecialchars($_POST["message"]);
+                $name = htmlspecialchars($_POST["name"]);
+                $lastname = htmlspecialchars($_POST["lastname"]);
+                $gender = htmlspecialchars($_POST["genders"]);
+                $email = htmlspecialchars($_POST["email"]);
+                $country = htmlspecialchars($_POST["country"]);
+                $subject = htmlspecialchars($_POST["subject"]);
+                
+                require './assets/mail.php';
             }  
             returnInfos();
         ?>
         <main>
-            <form method = "GET">
-                <label for="name">First Name: <input type="text" name="name" class="name" required></label>
-                <label for="lastname">Last Name: <input type="text" name="lastname" required></label>
-                <div class="gender">
-                    <label for="male">Male: <input type="radio" name="male"></label>
-                    <label for="woman">Woman: <input type="radio" name="woman"></label>    
+            <form method = "POST">
+                <div class="nameDiv"><label for="name">First Name: <input type="text" name="name" class="name" required></label></div>
+                <div class="lnameDiv"><label for="lastname">Last Name: <input type="text" name="lastname" class="lname" required></label></div>
+                <div class="genderDiv">
+                    <label for="genders" class="genderLabel">Gender:
+                        <select name="genders" class="gender">
+                                <option value="Male" name="male"selected>Male</option>
+                                <option value="Female" name="female">Female</option>
+                        </select>
+                    </label>
                 </div>
-                <label for="email">Email: <input type="email" name="email" required></label>
-                <label for="country">Country: <input type="text" name="country" required></label>
-                <label for="subject">Subject: 
-                    <select name="subject" id="">
-                        <option value="problem shipping">Problem Shipping</option>
-                        <option value="bug">Bug</option>
-                        <option value="other" selected>Other</option>
-                    </select>
-                </label>
-                <label for="message">Message: <textarea name="message" required></textarea></label>
+                <div class="emailDiv"><label for="email">Email(...@gmail.com): <input type="email" name="email" class="email" required></label></div>
+                <div class="countryDiv"><label for="country">Country: <input type="text" name="country" class="country" required></label></div>
+                <div class="subjectDiv">
+                    <label for="subject" class="subjectLabel">Subject: 
+                        <select name="subject" class="choices">
+                            <option value="Problem Shipping">Problem Shipping</option>
+                            <option value="Bug">Bug</option>
+                            <option value="Other" selected>Other</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="messageDiv">
+                    <label for="message">Message: <textarea name="message" class="message" required></textarea></label>
+                </div>
                 <input type="submit" name="submit" value="Submit" class="submit">
             </form>
         </main>

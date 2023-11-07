@@ -10,10 +10,13 @@ form {
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding: 3rem;
-    .gender {
+    .genderLabel {
         display: flex;
-        flex-direction: row;
-        gap: 2rem;
+        text-align: center;
+    }
+    .subjectLabel {
+        display: flex;
+        text-align: center;
     }
     label {
         font-size: 2.5rem;
@@ -22,9 +25,10 @@ form {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 1rem;
         select {
             font-size: 2rem;
-            width: 95%;
+            width: 85%;
             background-color: #303030;
             color: #FFF;
         }
